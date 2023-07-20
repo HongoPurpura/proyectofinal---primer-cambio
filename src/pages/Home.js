@@ -1,35 +1,35 @@
-import React from "react"
+import React, { Profiler } from "react"
 import { useAuth0 } from "@auth0/auth0-react"
 import Axios from "axios";
 import { useEffect, useState } from "react";
+import Celebrities_List from "../components/Celebrities_List";
 
 const Home = () => {
-    const {user, isAuthenticated, isLoading} = useAuth0();
-    const key='UHl/RutbWUc9p0t6ldOJYA==infJzZFhKh3zW6SU';
+    const { user } = useAuth0();
+    const [celebrity, setCelebrity] = useState([]);
+    const key = process.env.REACT_APP_KEY;
     const headers = {
         'X-Api-Key': key,
     }
     const nombre = 'Michael Jordan'
-    const url = 'https://api.api-ninjas.com/v1/celebrity?name='+nombre;
+    const url = process.env.REACT_APP_URL_APP;
     useEffect(() => {
-        Axios.get(url, {headers})
-        .then(resp=>{console.log(resp.data)})
-        .catch(error=>{console.log(error)})
-},[])
-    if (isLoading){
-        return <div> Cargando ... </div>
-    }
-
+        console.log(key);
+        Axios.get(url, { headers })
+            .then(resp => {
+                console.log(resp.data);
+                setCelebrity(resp.data);
+            })
+            .catch(error => { console.log(error) })
+    }, [])
     return (
-        isAuthenticated && (
-            <div>
-                <img src={user.picture} alt={user.name}/>
-                <h2>{user.name}</h2>
-                <p>Correo electrónico: {user.email}</p>
-            </div>
-        )
+        <div>
+            <h3>{user.name}</h3>
+            
+            <Celebrities_List celebrities={celebrity} />
 
-    );
+        </div>
+    )
 }
 
 export default Home

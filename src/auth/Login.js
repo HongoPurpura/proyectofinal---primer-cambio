@@ -22,7 +22,7 @@ const Login = () => {
 if (isLoading){
     <div> Cargando ...</div>
 }
-    return (<button onClick={handleLogin}>Acceder</button>)
+    return (<button type="button" class="btn btn-success" onClick={handleLogin}>Acceder</button>)
 };
 
 export default Login;

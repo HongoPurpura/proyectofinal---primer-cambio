@@ -4,7 +4,7 @@ import React from "react";
 const Loguot = () => {
     const {logout} = useAuth0();
     return (
-        <button type="button" class="btn btn-warning" onClick={()=>logout({returnTo: window.location.origin})}>
+        <button type="button" class="btn btn-outline-secondary" onClick={()=>logout({returnTo: window.location.origin})}>
             Cerrar Sesión
         </button>
     )

@@ -1,7 +1,7 @@
 
 const conf_auth = {
-    domain: 'dev-q32hahnii6kjl0tg.us.auth0.com',
-    clientId: 'y7MkA5f8rxvSNSpZFoX2LxLT05XSKwR7',
+    domain: 'dev-xb8zzvxemz6xcimt.us.auth0.com',
+    clientId: 'ApTcgERaKfOuOFevikdVwf21e2KrUlqY',
     redirectUri: window.location.origin
 }
 

@@ -7,7 +7,7 @@ export const Favorites = () => {
     return (
         <>
             <div>Celebridades Favoritas</div>
-            <table>
+            <table class="table table-dark table-sm">
                 <thead>
                     <tr>
                         <th scope='col'> ID </th>

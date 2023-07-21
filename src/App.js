@@ -5,6 +5,7 @@ import Logout from './auth/Logout';
 import { Link, Route, Routes } from 'react-router-dom';
 import { Favorites } from './pages/Favorites';
 import SearchBar from './components/SearchBar';
+import "./estilosBarraNav.css";
 
 
 function App() {
@@ -14,11 +15,12 @@ function App() {
       <header className="App-header">
       {isAuthenticated ? (
         <>
-        <nav>
-        <Link to='/favorites'> Favoritos</Link>
-        <Link to='/home'> Home </Link>
-        <Link to='/logout'> logout </Link>
+        <nav  class="nav" id='barra'>
+        <Link to='/favorites'> <a class="nav-link active" aria-current="page" href="#">Favoritos</a></Link>
+        <Link to='/home'> <a class="nav-link active" aria-current="page" href="#">Home</a> </Link>
+        <Link to='/logout'>  <a class="nav-link active" aria-current="page" href="#">Logout</a> </Link>
         </nav>
+      
         </>
       ): (
         <Login/>
